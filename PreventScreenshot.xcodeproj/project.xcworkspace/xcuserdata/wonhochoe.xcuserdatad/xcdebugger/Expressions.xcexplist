@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ScreenProtector.hideScreen():ScreenProtector.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "window?.isHidden">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ScreenProtector.grandAccessAndDeleteTheLastPhoto():ScreenProtector.swift">
          <PersistentStrings>
             <PersistentString
