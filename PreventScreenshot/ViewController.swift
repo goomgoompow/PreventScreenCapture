@@ -24,34 +24,57 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureHierarchy()
         configureDataSource()
+        //requestGalleryPermission()
+        print("viewDidLoad")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+        requestGalleryPermission()
+        NotificationCenter.default.addObserver(self, selector: #selector(onResume), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func onResume(){
         requestGalleryPermission()
     }
     
-    
     func requestCameraPermission(){
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-                    if granted {
-                        print("Camera: 권한 허용")
-                    } else {
-                        print("Camera: 권한 거부")
-                    }
-                })
+            if granted {
+                print("Camera: 권한 허용")
+            } else {
+                print("Camera: 권한 거부")
+            }
+        })
     }
     
     func requestGalleryPermission(){
         PHPhotoLibrary.requestAuthorization({status in
-            
             switch status{
             case .authorized:
                 print("Gallery: 권한 추가")
-            case .denied:
+            case .denied,.restricted, .notDetermined:
                 print("Gallery: 권한 거부")
-            case .restricted, .notDetermined:
                 print("Galleru: 선택하지 않음")
+                DispatchQueue.background(completion: self.setAuthAlert)
+                //self.setAuthAlert()
             default:
                 break
             }
         })
+    }
+    
+    func setAuthAlert(){
+        let authAlertController : UIAlertController
+            = UIAlertController(title: "사진첩 접근 권한 요청", message: "사진첩 권한을 허용해야만 앱을 사용할 수 있습니다.", preferredStyle: .alert)
+        let authAction : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {(UIAlertAction) in
+            if let appSettings = URL(string: UIApplication.openSettingsURLString){
+                UIApplication.shared.open(appSettings, options: [:] , completionHandler: nil)
+            }
+        })
+        authAlertController.addAction(authAction)
+        self.present(authAlertController, animated: true, completion: nil)
+        
     }
 }
 

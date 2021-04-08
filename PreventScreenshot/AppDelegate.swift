@@ -42,11 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("applicationDidEnterBackground");
+        print("applicationDidEnterBackground ^^^");
     }
-    
-   
-
 }
 
 extension AppDelegate{
