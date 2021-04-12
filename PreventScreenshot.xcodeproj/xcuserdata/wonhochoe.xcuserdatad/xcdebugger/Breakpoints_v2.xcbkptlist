@@ -46,8 +46,8 @@
             filePath = "PreventScreenshot/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "requestGalleryPermission()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "PreventScreenshot/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "requestGalleryPermission()"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B4A6D3D0-2320-4E65-A8DC-BE32024EC040"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PreventScreenshot/ScreenProtector.swift"
@@ -94,8 +94,8 @@
             filePath = "PreventScreenshot/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "setAuthAlert()"
             landmarkType = "7">
          </BreakpointContent>
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F3AF6DD1-281D-42EA-9BB9-B2C9B9DD8579"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PreventScreenshot/ScreenProtector.swift"
@@ -113,6 +113,166 @@
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "presentwarningWindow(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F30A0166-B1AC-4A77-A0AA-D10BE14F9FBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "requestGalleryPermission()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB907481-3615-485B-B1D6-9CD94EC53364"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ScreenProtector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "deletePhoto(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB907481-3615-485B-B1D6-9CD94EC53364 - 1a5d14e28fbf59c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PreventScreenshot.ScreenProtector.deletePhoto(__C.NSArray) -&gt; ()"
+                  moduleName = "PreventScreenshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonhochoe/Downloads/PreventScreenCaptureIniOS14-master/PreventScreenshot/ScreenProtector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "DB907481-3615-485B-B1D6-9CD94EC53364 - a68cb6b98fa77ff1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in PreventScreenshot.ScreenProtector.deletePhoto(__C.NSArray) -&gt; ()"
+                  moduleName = "PreventScreenshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonhochoe/Downloads/PreventScreenCaptureIniOS14-master/PreventScreenshot/ScreenProtector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C21B78E-2AF9-49FB-8FA2-0ADCF2D34EC7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ScreenProtector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "grandAccessAndDeleteTheLastPhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "825E0AFB-1099-498C-8A4F-D035FF175E89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ScreenProtector.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "didDetectScreenshot()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "825E0AFB-1099-498C-8A4F-D035FF175E89 - 6f00072cb0cd7fd9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in PreventScreenshot.ScreenProtector.(didDetectScreenshot in _21B8AE2E088E676E07C27A64D0D96CA2)() -&gt; ()"
+                  moduleName = "PreventScreenshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonhochoe/Downloads/PreventScreenCaptureIniOS14-master/PreventScreenshot/ScreenProtector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "825E0AFB-1099-498C-8A4F-D035FF175E89 - a2f1db596f931b0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 () -&gt; () in implicit closure #1 (PreventScreenshot.ScreenProtector) -&gt; () -&gt; () in closure #1 () -&gt; () in PreventScreenshot.ScreenProtector.(didDetectScreenshot in _21B8AE2E088E676E07C27A64D0D96CA2)() -&gt; ()"
+                  moduleName = "PreventScreenshot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wonhochoe/Downloads/PreventScreenCaptureIniOS14-master/PreventScreenshot/ScreenProtector.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C709541D-A0EF-4301-94B2-1DC0633A274B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "onResume()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90452F1A-5CAA-4E40-9D18-4522A2A1BB3F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PreventScreenshot/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "requestGalleryPermission()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

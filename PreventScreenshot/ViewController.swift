@@ -49,19 +49,34 @@ class ViewController: UIViewController {
     }
     
     func requestGalleryPermission(){
-        PHPhotoLibrary.requestAuthorization({status in
-            switch status{
+//        PHPhotoLibrary.requestAuthorization({status in
+//            switch status{
+//            case .limited:
+//                print("Gallery: 권한 limited")
+//            case .authorized:
+//                print("Gallery: 권한 추가")
+//            case .denied,.restricted, .notDetermined:
+//                print("Gallery: 권한 거부")
+//                print("Galleru: 선택하지 않음")
+//                DispatchQueue.background(completion: self.setAuthAlert)
+//                //self.setAuthAlert()
+//
+//            default:
+//                break
+//            }
+//        })
+        PHPhotoLibrary.requestAuthorization(for: .readWrite){
+            status in
+            switch status {
             case .authorized:
-                print("Gallery: 권한 추가")
-            case .denied,.restricted, .notDetermined:
-                print("Gallery: 권한 거부")
-                print("Galleru: 선택하지 않음")
+                print("authorized")
+            case .limited , .denied, .notDetermined, .restricted:
+                print("limited access granted")
                 DispatchQueue.background(completion: self.setAuthAlert)
-                //self.setAuthAlert()
             default:
                 break
             }
-        })
+        }
     }
     
     func setAuthAlert(){
