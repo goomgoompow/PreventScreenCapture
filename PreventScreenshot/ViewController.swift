@@ -23,7 +23,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
-        configureDataSource()
+        if #available(iOS 14.0, *){
+            configureDataSource()
+        }
         //requestGalleryPermission()
         print("viewDidLoad")
     }
@@ -49,39 +51,39 @@ class ViewController: UIViewController {
     }
     
     func requestGalleryPermission(){
-//        PHPhotoLibrary.requestAuthorization({status in
-//            switch status{
-//            case .limited:
-//                print("Gallery: 권한 limited")
-//            case .authorized:
-//                print("Gallery: 권한 추가")
-//            case .denied,.restricted, .notDetermined:
-//                print("Gallery: 권한 거부")
-//                print("Galleru: 선택하지 않음")
-//                DispatchQueue.background(completion: self.setAuthAlert)
-//                //self.setAuthAlert()
-//
-//            default:
-//                break
-//            }
-//        })
-        PHPhotoLibrary.requestAuthorization(for: .readWrite){
-            status in
-            switch status {
-            case .authorized:
-                print("authorized")
-            case .limited , .denied, .notDetermined, .restricted:
-                print("limited access granted")
-                DispatchQueue.background(completion: self.setAuthAlert)
-            default:
-                break
+        if #available(iOS 14, *) {
+            PHPhotoLibrary.requestAuthorization(for: .readWrite){
+                status in
+                switch status {
+                case .authorized:
+                    print("authorized")
+                case .limited , .denied, .notDetermined, .restricted:
+                    print("limited access granted")
+                    DispatchQueue.background(completion: self.setAuthAlert)
+                default:
+                    break
+                }
             }
+        } else {
+            // Fallback on earlier versions
+            PHPhotoLibrary.requestAuthorization({
+                status in
+                switch status {
+                case .authorized:
+                    print("authorized")
+                case .limited , .denied, .notDetermined, .restricted:
+                    print("limited access granted")
+                    DispatchQueue.background(completion: self.setAuthAlert)
+                default:
+                    break
+                }
+            })
         }
     }
     
     func setAuthAlert(){
         let authAlertController : UIAlertController
-            = UIAlertController(title: "사진첩 접근 권한 요청", message: "사진첩 권한을 허용해야만 앱을 사용할 수 있습니다.", preferredStyle: .alert)
+            = UIAlertController(title: "사진첩 접근 권한 요청", message: "사진 접근 허용을 '모든 사진'으로 허용해야 앱을 사용할 수 있습니다.\n(스크린 캡쳐시 해당 파일 삭제하기 위함)", preferredStyle: .alert)
         let authAction : UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {(UIAlertAction) in
             if let appSettings = URL(string: UIApplication.openSettingsURLString){
                 UIApplication.shared.open(appSettings, options: [:] , completionHandler: nil)
@@ -118,12 +120,13 @@ extension ViewController {
         collectionView.backgroundColor = .black
         view.addSubview(collectionView)
     }
+    @available(iOS 14.0, *)
     private func configureDataSource() {
-
         let cellRegistration = UICollectionView.CellRegistration<ImageCollectionViewCell, Int> { (cell, indexPath, identifier) in
             // Populate the cell with image
             cell.configure(image: self.images[indexPath.row % 4])
         }
+      
 
         dataSource = UICollectionViewDiffableDataSource<Section, Int>(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
