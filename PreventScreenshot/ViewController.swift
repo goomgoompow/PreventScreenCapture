@@ -9,10 +9,9 @@ import UIKit
 import Photos
 
 class ViewController: UIViewController {
-    let images: [UIImage] = [UIImage(named: "selfie1")!,
-                             UIImage(named: "selfie2")!,
-                             UIImage(named: "selfie3")!,
-                             UIImage(named: "selfie4")!]
+    let images: [UIImage] = [UIImage(named: "background00")!,
+                             UIImage(named: "background01")!,
+                             UIImage(named: "background02")!]
     enum Section {
         case main
     }
@@ -124,7 +123,8 @@ extension ViewController {
     private func configureDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<ImageCollectionViewCell, Int> { (cell, indexPath, identifier) in
             // Populate the cell with image
-            cell.configure(image: self.images[indexPath.row % 4])
+            print("indexPath.row: ")
+            cell.configure(image: self.images[indexPath.row % 3])
         }
       
 
@@ -137,7 +137,7 @@ extension ViewController {
         // initial data
         var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(Array(0..<100))
+        snapshot.appendItems(Array(0..<3))
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }

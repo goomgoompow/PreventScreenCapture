@@ -23,31 +23,17 @@ class ScreenProtector {
     func startPreventingScreenshot() {
         NotificationCenter.default.addObserver(self, selector: #selector(didDetectScreenshot), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
     }
-
-    func foo(){
-        //NotificationCenter.default.addObserver(self, selector: #selector(screenCaptureChanged), name:UIScreen.capturedDidChangeNotification, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActiveNoti), name: UIApplication.didBecomeActiveNotification, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(willResignActiveNotification), name: UIApplication.willResignActiveNotification, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackgroundNotification), name: UIApplication., object: nil)
-        NotificationQueue.default.enqueue(Notification(name: UIApplication.userDidTakeScreenshotNotification), postingStyle: .asap)
-    }
     
     @objc private func didBecomeActiveNoti(){
-        DispatchQueue.main.async {
-            print("11111 didBecomeActiveNotification")
-        }
+        
     }
     
     @objc private func didEnterBackgroundNotification(){
-        DispatchQueue.main.async {
-            print("33333 didEnterBackgroundNotification")
-        }
+        
     }
     
     @objc private func willResignActiveNotification(){
-        DispatchQueue.main.async {
-            print("22222 willResignActiveNotification")
-        }
+        
     }
     
     @objc private func screenCaptureChanged(){
@@ -66,21 +52,6 @@ class ScreenProtector {
 
 @objc private func didDetectScreenshot() {
     print("print didDetectScreenshot----")
-   // self.presentwarningWindow( "Screenshots are not allowed in our app. Please follow the instruction to delete the screenshot from your photo album!")
-    //self.hideScreen()
-//    DispatchQueue.main.async {
-//        print("00000 didDetectScreenshot")
-//        self.presentwarningWindow( "Screenshots are not allowed in our app. Please follow the instruction to delete the screenshot from your photo album!")
-//        self.hideScreen()
-//        //self.grandAccessAndDeleteTheLastPhoto()
-//        DispatchQueue.main.asyncAfter(deadline: .now()+1.0, execute: self.grandAccessAndDeleteTheLastPhoto)
-//    }
-//
-//    let queue = DispatchQueue(label: "work-queue")
-//    queue.async {
-//        print("87979879879 didDetectScreenshot")
-//
-//    }
     DispatchQueue.background(completion: {
         self.presentwarningWindow( "보안 정책에 따라 화면을 캡쳐할 수 없습니다. 캡쳐된 이미지를 삭제해주세요!")
                 self.hideScreen()
@@ -107,7 +78,7 @@ class ScreenProtector {
         // Warning label
         let label = UILabel(frame: frame)
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 40)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .white
         label.textAlignment = .center
         label.text = message
@@ -156,12 +127,17 @@ class ScreenProtector {
     func deletePhoto(_ array : NSArray) {
         PHPhotoLibrary.shared().performChanges({
             PHAssetChangeRequest.deleteAssets(array)},
-                                               completionHandler: { [self]
+                completionHandler: { [self]
                 success, error in
                 //NSLog("Finished deleting asset. %@", (success ? "Success" : error!))
                 print("success: @ , error: @", success, error)
                 if !success {
                     self.deletePhoto(array)
+                }else{
+                    DispatchQueue.background(completion: {
+                        warningWindow?.removeFromSuperview()
+                        warningWindow = nil
+                    })
                 }
             })
     }

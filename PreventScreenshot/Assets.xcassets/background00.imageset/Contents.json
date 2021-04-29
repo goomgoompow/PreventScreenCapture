@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "selfie1.png",
+      "filename" : "pahcs3.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "pahcs3.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "pahcs3.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }
